@@ -10,27 +10,27 @@ function App() {
 
 
   React.useEffect(() => {
-    Axios.get('http://localhost:3001/read').then((Response) => {
+    Axios.get('https://mern-bg.herokuapp.com/read').then((Response) => {
       setFoodList(Response.data)
     })
   }, [])
 
   const submit = () => {
-    Axios.post('http://localhost:3001/insert', {
+    Axios.post('https://mern-bg.herokuapp.com/insert', {
       foodName: foodName,
       days: days
     })
   }
 
   const Update = (_id) => {
-    Axios.put('http://localhost:3001/update', {
+    Axios.put('https://mern-bg.herokuapp.com/update', {
       id : _id,
       updateFood: updateFood
     })
   }
 
   const DeleteFood = (_id) => {
-    Axios.delete(`http://localhost:3001/delete/${_id}` )
+    Axios.delete(`https://mern-bg.herokuapp.com/delete/${_id}` )
   }
 
   return (
